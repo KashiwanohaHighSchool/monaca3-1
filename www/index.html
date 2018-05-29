@@ -11,8 +11,10 @@
         document.addEventListener('DOMContentLoaded', function() {
         // 今の日付を得る
         var nowDate = new Date();
+
         // 西暦を得る
         var fullYear = nowDate.getFullYear();
+        
         // 数値の西暦を文字列に変換して、そこから下2桁の文字列を得る
         var shortYear = String(fullYear).substr(2, 2);
 
@@ -21,6 +23,7 @@
 
         // 西暦の下2桁の文字列を数値に変換して、それに12を足す
         var heiseiYear = Number(shortYear) + 12;
+        
         // 得られた数値をHTML に反映
         document.getElementById('heisei-year').textContent = heiseiYear;
         document.getElementById('shouwa-year').textContent = shouwaYear;
