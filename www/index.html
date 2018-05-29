@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // ページの読み込みが終わったら実行する
+        document.addEventListener('DOMContentLoaded', function() {
+        // 今の日付を得る
+        var nowDate = new Date();
+        // 西暦を得る
+        var fullYear = nowDate.getFullYear();
+        // 数値の西暦を文字列に変換して、そこから下2桁の文字列を得る
+        var shortYear = String(fullYear).substr(2, 2);
+
+        //西暦から数字を引いて昭和の年数を得る
+        var shouwaYear = fullYear - 1925;
+
+        // 西暦の下2桁の文字列を数値に変換して、それに12を足す
+        var heiseiYear = Number(shortYear) + 12;
+        // 得られた数値をHTML に反映
+        document.getElementById('heisei-year').textContent = heiseiYear;
+        document.getElementById('shouwa-year').textContent = shouwaYear;
+        document.getElementById('year').textContent = fullYear;
+        });
+    </script>
+
+</head>
+<body>
+    <div id="heisei">
+      今年は平成<span id="heisei-year"></span>年です <br>
+      今年は昭和<span id="shouwa-year"></span>年です <br>
+    </div>
+    <div id="ad">A.D. <span id="year"></span></div>
+</body>
+</html>
